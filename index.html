@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冬游导航站 - 冬季旅行好帮手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            z-index: 10;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .nav-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 25px;
+            width: 300px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .nav-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .nav-desc {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .snowflake {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 雪花背景 -->
+    <div id="snowflakes"></div>
+    
+    <div class="container">
+        <h1>❄️ 冬游导航站 ❄️</h1>
+        <p class="subtitle">冬季旅行好帮手，让您的冬日之旅更轻松</p>
+        
+        <div class="nav-links">
+            <div class="nav-card" onclick="window.open('缺德小组冬游条约.html', '_blank')">
+                <div class="nav-icon">✈️</div>
+                <h3 class="nav-title">冬游条约</h3>
+                <p class="nav-desc">相关条约内容</p>
+                <a href="缺德小组冬游条约.html" class="btn" target="_blank">立即访问</a>
+            </div>
+            
+            <div class="nav-card" onclick="window.open('缺德小组移动热点条约.html', '_blank')">
+                <div class="nav-icon">🌨️</div>
+                <h3 class="nav-title">移动热点条约</h3>
+                <p class="nav-desc">提供高速流畅的移动热点</p>
+                <a href="缺德小组移动热点条约.html" class="btn" target="_blank">立即访问</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 冬游导航站 | 专为冬季旅行打造的便捷导航</p>
+    </footer>
+
+    <script>
+        // 创建雪花效果
+        function createSnowflakes() {
+            const snowflakesContainer = document.getElementById('snowflakes');
+            const snowflakeCount = 50;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                
+                // 随机大小
+                const size = Math.random() * 5 + 3;
+                snowflake.style.width = `${size}px`;
+                snowflake.style.height = `${size}px`;
+                
+                // 随机位置
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.top = `${Math.random() * 100}vh`;
+                
+                // 随机透明度
+                snowflake.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                // 随机动画
+                const duration = Math.random() * 10 + 5;
+                snowflake.style.animation = `fall ${duration}s linear infinite`;
+                
+                snowflakesContainer.appendChild(snowflake);
+            }
+            
+            // 添加CSS动画
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh) translateX(20px);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // 页面加载完成后创建雪花
+        window.addEventListener('load', createSnowflakes);
+    </script>
+</body>
+</html>
