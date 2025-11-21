@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缺德小组冬游条约</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 5px 10px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #4b6cb7;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #4b6cb7;
+            color: white;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #4b6cb7;
+            border-left: 4px solid #4b6cb7;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #555;
+            margin: 15px 0 10px;
+            font-size: 1.3rem;
+        }
+        
+        .clause {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 2px solid #eaeaea;
+        }
+        
+        .clause-number {
+            font-weight: bold;
+            color: #4b6cb7;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+        
+        /* 高亮重要条款 */
+        .important {
+            background-color: #f0f7ff;
+            border-left: 4px solid #4b6cb7;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>缺德小组冬游条约</h1>
+            <p class="subtitle">本条约适用于小组所有成员及冬游相关活动</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#intro" class="active">条约简介</a></li>
+                <li><a href="#chapter1">基础框架</a></li>
+                <li><a href="#chapter2">核心行为准则</a></li>
+                <li><a href="#chapter3">组织与权限</a></li>
+                <li><a href="#chapter4">隐私与安全</a></li>
+                <li><a href="#chapter5">违约与惩罚</a></li>
+            </ul>
+        </nav>
+        
+        <section id="intro">
+            <h2>条约简介</h2>
+            <p>《缺德小组冬游条约》旨在规范小组成员在冬游活动期间的行为，确保活动安全、有序、愉快进行。所有成员需严格遵守本条约规定。</p>
+            <div class="note">
+                <p><strong>注意：</strong>本条约可能随时被修改，修改时恕不另行通知。条约最终解释权归组长所有。</p>
+            </div>
+        </section>
+        
+        <section id="chapter1">
+            <h2>第一章：基础框架</h2>
+            <p>本章规定了条约的基本效力和适用范围。</p>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第一条</span> 适用范围</h3>
+                <p>本条约适用于小组所有成员（包括但不限于人类及其他生物），适用于所有活动场景（包括但不限于景区、车上、校内等）。</p>
+            </div>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第二条</span> 解释权与修改权</h3>
+                <p>本条约的最终解释权归组长所有。本条约可能随时被修改，修改时恕不另行通知。</p>
+            </div>
+        </section>
+        
+        <section id="chapter2">
+            <h2>第二章：核心行为准则</h2>
+            <p>本章规定了成员在活动和日常相处中必须遵守的规定。</p>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第三条</span> 基本道德与法律</h3>
+                <p>禁止违反任何法律法规与社会公德。诚实守信，答应的事情务必做到。</p>
+            </div>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第四条</span> 文明礼仪与公共卫生</h3>
+                <p>不乱扔垃圾，不随地大小便。不大声喧哗，不影响他人。文明乘车，不向车外抛物，不高空抛物。</p>
+            </div>
+            
+            <div class="clause important">
+                <h3><span class="clause-number">第五条</span> 安全守则</h3>
+                <p>不购买危险物品，不抽烟、不喝酒、不嚼槟榔。不打架斗殴。不随意与陌生人搭讪/交换联系方式，谨防诈骗。</p>
+            </div>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第六条</span> 团队活动纪律</h3>
+                <p>组长讲解时认真听讲；自由活动时保持安静。按指定座位就坐，不得占座、抢座。不做恶作剧或令人厌恶的事情。</p>
+            </div>
+        </section>
+        
+        <section id="chapter3">
+            <h2>第三章：组织与权限管理</h2>
+            <p>本章规定了小组内部的权力运行和成员的权利义务关系。</p>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第七条</span> 组织原则</h3>
+                <p>不滥用职权，对待每个组员须公平公正。如有任何情况，需及时向组长或班主任老师汇报。</p>
+            </div>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第八条</span> 成员权益的设定与使用</h3>
+                <p>权益可以由组员开放或设定，并可合理收费。使用权益须遵守发起人设定的条款，解释权归发起人。权益分配须公平、公正、公开，不得滥用。小组权益原则上不对外开放。</p>
+            </div>
+        </section>
+        
+        <section id="chapter4">
+            <h2>第四章：隐私与信息安全</h2>
+            <p>本章单独规定了成员个人信息的处理规则。</p>
+            
+            <div class="clause important">
+                <h3><span class="clause-number">第九条</span> 信息收集与公开</h3>
+                <p>为组织活动需要，会收集成员的基本联系方式。信息仅在小组内部公开，承诺不主动对外泄露。任何情况下公开信息都需征得本人同意。</p>
+            </div>
+            
+            <div class="clause">
+                <h3><span class="clause-number">第十条</span> 信息保护义务</h3>
+                <p>禁止组员私自传播或公开他人的个人信息。禁止使用任何技术手段窃取信息。</p>
+            </div>
+        </section>
+        
+        <section id="chapter5">
+            <h2>第五章：违约与惩罚</h2>
+            <p>本章规定了违反上述条款的后果。</p>
+            
+            <div class="clause important">
+                <h3><span class="clause-number">第十一条</span> 惩罚措施</h3>
+                <p>惩罚适用于违反条约、法律及公德的成员。惩罚方式包括但不限于：逐出队伍、罚抄条约、写检讨、罚款、冻结权益、警告等。</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>缺德小组 版权所有 © 2023</p>
+            <p class="last-updated">最后更新日期：2025年11月21日</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的导航高亮效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // 移除所有active类
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // 为当前点击的链接添加active类
+                    this.classList.add('active');
+                });
+            });
+            
+            // 简单的滚动检测，高亮当前章节
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('nav a');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
