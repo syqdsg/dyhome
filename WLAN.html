@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缺德热点信息展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            color: #34495e;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: #3498db;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            min-width: 100px;
+            color: #2c3e50;
+        }
+        
+        .info-value {
+            flex: 1;
+        }
+        
+        .signal-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .signal-bar {
+            width: 20px;
+            height: 10px;
+            margin-right: 3px;
+            background: #e0e0e0;
+            border-radius: 2px;
+        }
+        
+        .signal-bar.active {
+            background: #2ecc71;
+        }
+        
+        .pros-cons {
+            display: flex;
+            margin-top: 10px;
+        }
+        
+        .pros, .cons {
+            flex: 1;
+        }
+        
+        .pros ul, .cons ul {
+            padding-left: 20px;
+        }
+        
+        .pros li {
+            color: #27ae60;
+            list-style-type: '✓ ';
+        }
+        
+        .cons li {
+            color: #e74c3c;
+            list-style-type: '✗ ';
+        }
+        
+        .wifi-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .wifi-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .password-field {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        
+        .password {
+            flex: 1;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+        
+        .toggle-password {
+            background: none;
+            border: none;
+            color: #3498db;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .wifi4 {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .wifi5 {
+            background: #9b59b6;
+            color: white;
+        }
+        
+        .wifi6 {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>个人热点信息展示</h1>
+            <p class="subtitle">移动运营商与WLAN网络信息一览</p>
+        </header>
+        
+        <section>
+            <h2 class="section-title">移动运营商信息</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header" style="background: #FF6B6B;">
+                        中国移动（我们所使用的）
+                    </div>
+                    <div class="card-body">
+                        <div class="info-item">
+                            <div class="info-label">信号类型:</div>
+                            <div class="info-value">
+                                <span>4G/5G</span>
+                                <div class="signal-indicator">
+                                    <div class="signal-bar active"></div>
+                                    <div class="signal-bar active"></div>
+                                    <div class="signal-bar active"></div>
+                                    <div class="signal-bar active"></div>
+                                    <div class="signal-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">优缺点:</div>
+                            <div class="info-value">
+                                <div class="pros-cons">
+                                    <div class="pros">
+                                        <ul>
+                                            <li>覆盖范围广</li>
+                                            <li>网络稳定性好</li>
+                                            <li>客户服务完善</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cons">
+                                        <ul>
+                                            <li>资费相对较高</li>
+                                            <li>套餐选择复杂</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+        <section>
+            <h2 class="section-title">WLAN信息</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header" style="background: #96CEB4;">
+                        热点网络
+                    </div>
+                    <div class="card-body">
+                        <div class="wifi-info">
+                            <div class="wifi-icon">📶</div>
+                            <div>
+                                <div class="info-label">WLAN名称:</div>
+                                <div class="info-value">QUEDE Studio Wlan</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-label">密码:</div>
+                            <div class="info-value">
+                                <div class="password-field">
+                                    <span class="password">••••••••</span>
+                                    <button class="toggle-password">显示</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-label">频段:</div>
+                            <div class="info-value">
+                                <div>5GHz</div>
+                                <div class="pros-cons">
+                                    <div class="pros">
+                                        <ul>
+                                            <li>速度快</li>
+                                            <li>干扰少</li>
+                                        </ul>
+                                    </div>
+                                    <div class="cons">
+                                        <ul>
+                                            <li>穿墙能力弱</li>
+                                            <li>覆盖范围小</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-label">WiFi技术:</div>
+                            <div class="info-value">
+                                <span class="tech-badge wifi5">WiFi 5</span>
+                                <span>802.11ac</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+        <footer>
+            <p>缺德热点信息展示 &copy; 2025 | 最后更新: 2025年11月23日</p>
+        </footer>
+    </div>
+
+    <script>
+        // 密码显示/隐藏功能
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const passwordField = this.parentElement.querySelector('.password');
+                
+                if (this.textContent === '显示') {
+                    passwordField.textContent = passwordField.getAttribute('data-password') || 'HHeLiBeB';
+                    this.textContent = '隐藏';
+                } else {
+                    passwordField.setAttribute('data-password', passwordField.textContent);
+                    passwordField.textContent = '••••••••';
+                    this.textContent = '显示';
+                }
+            });
+        });
+        
+        // 模拟信号强度变化
+        function updateSignalStrength() {
+            document.querySelectorAll('.signal-indicator').forEach(indicator => {
+                const bars = indicator.querySelectorAll('.signal-bar');
+                const activeBars = Math.floor(Math.random() * 3) + 2; // 随机2-4个活跃信号条
+                
+                bars.forEach((bar, index) => {
+                    if (index < activeBars) {
+                        bar.classList.add('active');
+                    } else {
+                        bar.classList.remove('active');
+                    }
+                });
+            });
+        }
+        
+        // 每10秒更新一次信号强度
+        setInterval(updateSignalStrength, 10000);
+    </script>
+</body>
+</html>
